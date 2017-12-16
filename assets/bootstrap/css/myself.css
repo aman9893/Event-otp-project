@@ -1,0 +1,208 @@
+
+
+
+/* 16/12/2017 start css */
+
+
+/*  samplepage theme start css  */
+
+
+#features16-9 {
+    margin-top: -13px;  
+}
+
+.media-row .team-item a {
+    color: #666;
+    font-weight: 600;
+}
+
+#content5-a {
+    margin-top: -13px;
+}
+
+.form-horizontal td.wedwidths {
+    width: 30%;
+}
+
+.form-horizontal td.wedwidths1 {
+    width: 70%;
+}
+
+.form-horizontal .table td .form-control { 
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.1), -1px 0 2px rgba(0,0,0,0.05);
+    min-height: 3em;
+    height: 44px;
+    padding: 1.07em .5em;
+    border: solid 1px #ccc !important;
+    border-radius: 0px;
+}
+
+
+
+.form-horizontal .table td .form-control:hover {
+    box-shadow: 0 0 7px 3px rgba(68,80,85,.15) ;
+}
+
+.form-horizontal table td label.control-label {    
+    font-weight: 600;
+    padding-top: 5px;
+    color: #666;
+}
+
+.form-horizontal .table-bordered td, .table-bordered th {
+    border: 1px solid #ccc;
+}
+
+#form1 h1 {
+    text-align: center;
+}
+
+#form1 h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+
+
+/*  samplepage theme end css  */
+
+
+
+/*icon set css start*/
+
+a.faces {
+
+}
+
+a.faces i {
+    background: #0f7699;
+    color: #fff;
+    width: 37px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+a.twites {
+    
+}
+
+a.twites i {
+    background: #0f7699;
+    color: #fff;
+    width: 37px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+a.faces {
+    
+}
+
+a.googs i {
+    background: #0f7699;
+    color: #fff;
+    width: 37px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+#navbarSupportedContent .btn-primary, .btn-primary:active {
+    background: none;
+    border: none;
+    border-left: solid 1px #666;
+    border-radius: 0px;
+    color: #000;
+}
+
+#navbarSupportedContent .btn-primary:hover, .btn-primary:active .btn-primary:focus { 
+    background: none;
+    border: none;
+    border-left: solid 1px #666;
+    color: #000;
+}
+
+
+/*icon set css end*/
+
+
+#slider1-4 .carousel {
+    position: relative;
+    bottom: 13px;
+  }
+
+#slider1-4 .full-screen {
+    margin-bottom: -14px;
+ }
+
+ #menu2-1 .navbar {
+    background: linear-gradient( #ccc, #eee, #ddd) !important;
+}
+
+#slider1-4 .full-screen .slider-fullscreen-image {
+    min-height: 750px;
+    height: 100%;
+}
+
+#slider1-4 .full-screen .carousel-item .container.container-slide {
+    min-height: 750px;
+    height: 100%;
+}
+
+#features16-9 .media-row {
+    justify-content: left;
+}
+
+#features16-9 .team-item .item-image img {
+    height: 250px;
+}
+
+#content5-6 .display-2 {
+    font-weight: 500;
+}
+
+#testimonials4-c {
+    padding: 65px 0;
+}
+
+
+/*  media screen devices start css  */
+
+@media (max-width: 767px) {
+
+#slider1-4 .full-screen .carousel-item .container.container-slide {
+    min-height: 300px;
+    height: 100%;
+}
+
+#slider1-4 .full-screen .slider-fullscreen-image {
+    min-height: 300px;
+    height: 100%;
+}
+
+.cid-qBYtqdqEaX H2 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+
+
+
+
+}
+
+/*  media screen devices end css  */
+
+
+
+/* 16/12/2017 end css */

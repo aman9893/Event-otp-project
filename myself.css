@@ -1,0 +1,155 @@
+
+
+
+/* 16/12/2017 start css */
+
+
+/*  samplepage theme start css  */
+
+
+
+
+
+
+
+
+/*  samplepage theme end css  */
+
+
+
+/*icon set css start*/
+
+a.faces {
+
+}
+
+a.faces i {
+    background: #0f7699;
+    color: #fff;
+    width: 37px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+a.twites {
+	
+}
+
+a.twites i {
+    background: #0f7699;
+    color: #fff;
+    width: 37px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+a.faces {
+	
+}
+
+a.googs i {
+    background: #0f7699;
+    color: #fff;
+    width: 37px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+#navbarSupportedContent .btn-primary, .btn-primary:active {
+    background: none;
+    border: none;
+    border-left: solid 1px #666;
+    border-radius: 0px;
+    color: #000;
+}
+
+#navbarSupportedContent .btn-primary:hover, .btn-primary:active .btn-primary:focus { 
+    background: none;
+    border: none;
+    border-left: solid 1px #666;
+    color: #000;
+}
+
+
+/*icon set css end*/
+
+
+#slider1-4 .carousel {
+    position: relative;
+    bottom: 13px;
+  }
+
+#slider1-4 .full-screen {
+ 	margin-bottom: -14px;
+ }
+
+ #menu2-1 .navbar {
+    background: linear-gradient( #ccc, #eee, #ddd) !important;
+}
+
+#slider1-4 .full-screen .slider-fullscreen-image {
+	min-height: 750px;
+    height: 100%;
+}
+
+#slider1-4 .full-screen .carousel-item .container.container-slide {
+    min-height: 750px;
+    height: 100%;
+}
+
+#features16-9 .media-row {
+    justify-content: left;
+}
+
+#features16-9 .team-item .item-image img {
+    height: 250px;
+}
+
+#content5-6 .display-2 {
+    font-weight: 500;
+}
+
+#testimonials4-c {
+    padding: 65px 0;
+}
+
+
+/*  media screen devices start css  */
+
+@media (max-width: 767px) {
+
+#slider1-4 .full-screen .carousel-item .container.container-slide {
+    min-height: 300px;
+    height: 100%;
+}
+
+#slider1-4 .full-screen .slider-fullscreen-image {
+    min-height: 300px;
+    height: 100%;
+}
+
+.cid-qBYtqdqEaX H2 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+
+
+
+
+}
+
+/*  media screen devices end css  */
+
+
+
+/* 16/12/2017 end css */

@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-include('../../config.php');
+include('../../database/config.php');
 	?>
 
 
@@ -31,7 +31,7 @@ include('../../config.php');
 
 
 
-  $stmt = $DB_con->prepare("SELECT * FROM tbl_users INNER JOIN users ON tbl_users.user_id= users.id WHERE users.id ='".$_SESSION['sessData']['userID']."' order by tbl_users.id DESC limit 1") ;
+  $stmt = $DB_con->prepare("SELECT * FROM tbl_users order by tbl_users.id DESC limit 1") ;
 
 
 
@@ -46,7 +46,6 @@ include('../../config.php');
 			?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +55,7 @@ include('../../config.php');
     <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
     <meta name="author" content="https://www.365bootstrap.com">
 	
-    <title>Wedding Day | 365Bootstrap.com</title>
+    <title>Wedding Day</title>
 	
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -97,8 +96,7 @@ include('../../config.php');
             </div>
 			<div class="logo">
 				<a href="index.html">
-					<div class="name t-right">
-                    <?php echo $groom_name ?>  </span></div><div class="and">&amp;</div><div class="name t-left"> <?php echo $bride_name ?></div>
+					<div class="name t-right"><?php echo $groom_name ?>  <span> <?php echo $bride_name ?> </span></div><div class="and">&amp;</div><div class="name t-left"> Sophie <span> Angela</span></div>
 				</a>
 			</div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -110,21 +108,11 @@ include('../../config.php');
                     <li class="active">
                         <a class="page-scroll" href="#nav-home">Home</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#nav-story">Our Story</a>
-                    </li>
+                  
                     <li>
                         <a class="page-scroll" href="#nav-people">Important People</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#nav-blog">Our Blog</a>
-                    </li>
-					<li>
-                        <a class="page-scroll" href="#nav-photo">Gallery</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#nav-location">Location</a>
-                    </li>
+             
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -177,133 +165,14 @@ include('../../config.php');
 	<!-- /////////////////////////////////////////Content -->
 	<div id="page-content">
 	
-		<!-- ////////////Content Box 01 -->
-		<section class="box-content box-1 box-style-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="box-item">
-							<div>
-                             <img src="<?php echo '../../wedding1/images/'.$bride_photo; ?>" width="100%" height="100%"  title="" media-simple="true"/>
-								<h3><?php echo  $bride_name ?></h3>
-							
-								<ul class="list-inline social">
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								
-								</ul>
-							
-							</div>
-                        </div>
-                  <h1>       Weds </h2>
-			 		</div>
-			 		<div class="col-sm-6">
-						<div class="box-item fix-right">
-							<div>
-                            <img src="<?php echo '../../wedding1/images/'.$groom_photo; ?>" width="100%" height="100%"  title="" media-simple="true"/>
-                            <h3><?php echo  $groom_name ?></h3>
-							
-								<ul class="list-inline social">
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							
-								</ul>
-							
-							</div>
-						</div>
-			 		</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- ////////////Content Box 02 -->
-		<section class="box-content box-2" id="nav-story">
-			<div class="container">
-				<div class="row heading">
-					 <div class="col-lg-12">	
-	                    <h2>OUR <span>LOVE</span> STORY</h2>
-						<hr class="line">
-                    	<div class="intro">Lorem ipsum dolor sit amet</div>
-	                </div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<ul class="timeline">
-							<li>
-								<div class="timeline-image">
-									<i class="fa fa-heart-o"></i>
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4>The First Day we Met</h4>
-									</div>
-									<div class="timeline-body">
-										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted">
-								<div class="timeline-image">
-									<i class="fa fa-heart-o"></i>
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4>The First Day we Met</h4>
-									</div>
-									<div class="timeline-body">
-										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="timeline-image">
-									<i class="fa fa-heart-o"></i>
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4>The First Day we Met</h4>
-									</div>
-									<div class="timeline-body">
-										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted">
-								<div class="timeline-image">
-									<i class="fa fa-heart-o"></i>
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4>The First Day we Met</h4>
-									</div>
-									<div class="timeline-body">
-										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="timeline-image">
-									<i class="fa fa-heart-o"></i>
-								</div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4>The First Day we Met</h4>
-									</div>
-									<div class="timeline-body">
-										<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>	
-			</div>
-		</section>
+	
 		
 		<!-- ////////////Content Box 03 -->
 		<section class="box-content box-3 box-style-3" id="nav-people">
 			<div class="container">
 				<div class="row heading">
 					<div class="col-lg-12">	
-	                    <h2>BRIDESMAID <span>& </span>GROOMSMEN</h2>
+	                    <h2><?php echo $bride_name ?>  <span>& </span><?php echo $groom_name ?> </h2>
 						<hr class="line">
                     	<div class="intro">Lorem ipsum dolor sit amet</div>
 	                </div>
@@ -317,7 +186,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3 class="fix-right">The title on the article</h3>
-									<p class="fix-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+									<p class="fix-right">quam viverra convallis auctor.</p>
 									<div class="clear"></div>
 								</div>
 							</div>
@@ -330,7 +199,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3 class="fix-right">The title on the article</h3>
-									<p class="fix-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+									<p class="fix-right">enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
 									<div class="clear"></div>
 								</div>
 							</div>
@@ -400,207 +269,8 @@ include('../../config.php');
 			</div>
 		</section>
 		
-		<!-- ////////////Content Box 05 -->
-		<section class="box-content box-5 box-style-3" id="nav-blog">
-			<div class="container">
-				<div class="row heading">
-					<div class="col-lg-12">	
-	                    <h2>OUR <span>BLOG</span></h2>
-						<hr class="line">
-                    	<div class="intro">Lorem ipsum dolor sit amet</div>
-	                </div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="box-item">
-							<img src="images/12.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Planning Our Honeymoon</h3>
-								<p>Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis at diam.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span><br>
-								<a class="btn btn-1" href="single.html">Read More</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<img src="images/13.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Brainstorming Wedding Ideas</h3>
-								<p>Suspendisse porttitor. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis, viverra feugiat ipsum volutpat vitae. Fusce justo turpis, sodales sed placerat non, suscipit at diam.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span><br>
-								<a class="btn btn-1" href="single.html">Read More</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="box-item">
-							<img src="images/10.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>She Said Yes!</h3>
-								<p>Nunc eu velit metus. Donec in massa libero. Donec bibendum orci a lorem scelerisque luctus. Aliquam et ante quis erat semper pretium. Pellentesque vehicula.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span><br>
-								<a class="btn btn-1" href="single.html">Read More</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<img src="images/11.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Met Dovey???s Parents in Chicago</h3>
-								<p>Class aptent taciti urna bibendum id. Duis a commodo lectus. Morbi id purus nec purus feugiat vestibulum. Suspendisse sapien ante, bibendum ac quam quis, imperdiet bibendum sem. Curabitur nibh magna, tristique et convallis???</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span><br>
-								<a class="btn btn-1" href="single.html">Read More</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="box-item">
-							<img src="images/14.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Choosing The Bridesmaids and Groomsmen</h3>
-								<p>Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span><br>
-								<a class="btn btn-1" href="single.html">Read More</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<img src="images/15.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>A Sweet Escape to Paris</h3>
-								<p>Proin lobortis mattis odio non ornare. Sed tempor nisi eu hendrerit luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostravelit id sem tincidunt convallis ac eget quam. Vestibulum posuere porttitor sapien .</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span><br>
-								<a class="btn btn-1" href="single.html">Read More</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- ////////////Content Box 06 -->
-		<section class="box-content box-6" id="nav-photo">
-			<div class="container">
-				<div class="row heading">
-					<div class="col-lg-12">	
-	                    <h2>PHOTO <span>GALLERY</span></h2>
-						<hr class="line">
-                    	<div class="intro">Lorem ipsum dolor sit amet</div>
-	                </div>
-				</div>
-			</div>
-			<div class="no-gutter">
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/4.jpg" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/5.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/5.jpg" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/6.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/6.jpg" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/7.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/7.jpg" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/8.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/8.jpg" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/9.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/9.jpg" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/9a.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/9a.jpg" />
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="item-container">
-						<div class="item-caption">
-							<div class="item-caption-inner">
-								<div class="item-caption-inner1">
-									<a class="example-image-link" href="images/9b.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-										<i class="fa fa-search"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<img src="images/9b.jpg" />
-					</div>
-				</div>
-			</div>
-		</section>
+	
+
 		
 		<!-- ////////////Content Box 07 -->
 		<section class="box-content box-7 box-style-3" id="nav-location" style="padding-bottom: 0;">
@@ -630,7 +300,7 @@ include('../../config.php');
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="copyright">Copyright &copy; Your Website <br/>Designed by <a href="https://www.365bootstrap.com">365BOOTSTRAP</a></div>
+						<div class="copyright">Copyright &copy; Your Website <br/>Designed by <a href="#"</a></div>
 					</div>
 					<div class="col-md-4">
 						<ul class="list-inline social-buttons">
@@ -693,7 +363,6 @@ include('../../config.php');
 </body>
 
 </html>
-
 
 
 			<?php

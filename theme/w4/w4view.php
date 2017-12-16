@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include('../../config.php');
+include('../../database/config.php');
 	?>
 
 <?php 
@@ -29,7 +29,7 @@ include('../../config.php');
 
 
 
-  $stmt = $DB_con->prepare("SELECT * FROM tbl_users INNER JOIN users ON tbl_users.user_id= users.id WHERE users.id ='".$_SESSION['sessData']['userID']."' order by tbl_users.id DESC limit 1") ;
+  $stmt = $DB_con->prepare("SELECT * FROM tbl_users  order by tbl_users.id DESC limit 1") ;
 
 
 
@@ -42,15 +42,14 @@ include('../../config.php');
 		{
 			extract($row);
 			?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="https://www.365bootstrap.com">
 	
     <title>Your Wedding </title>
 	
@@ -69,7 +68,13 @@ include('../../config.php');
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/modernizr.custom.97074.js"></script>
 
-
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body class="index-page">
@@ -95,21 +100,9 @@ include('../../config.php');
                         <a href="#page-top"></a>
                     </li>
                     <li class="active">
-                        <a class="page-scroll" href="index.html">Home</a>
+                        <a class="page-scroll" href="w4view.php">Home</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="archive.html">Blog</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="single.html">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">Jason</a>
-                    </li>
-					<li>
-                        <a class="page-scroll" href="#">Sophie</a>
-                    </li>
-                    <li>
+         <li>
                         <a class="page-scroll" href="contact.html">Contact</a>
                     </li>
                 </ul>
@@ -139,11 +132,10 @@ include('../../config.php');
                         <div class="col-md-12 text-center">
                             <div class="logo">
 								<a href="#">
-									<div class="name t-right"><?php echo $groom_name ?></div><div class="and">&amp;</div><div class="name t-left"> <?php echo $bride_name ?> </div>
+										<div class="name t-right"><?php echo $bride_name ?> 
+									 </span></div><div class="and">&amp;</div><div class="name t-left"> <?php echo $groom_name ?>  </div>
 								</a>
-                            </div>
-                            
-                          
+							</div>
                         </div>
                     </div><!-- /header-text -->
 			    </div>
@@ -154,7 +146,8 @@ include('../../config.php');
                         <div class="col-md-12 text-center">
                              <div class="logo">
 								<a href="#">
-									<div class="name t-right"><?php echo $groom_name ?></div><div class="and">&amp;</div><div class="name t-left"> <?php echo $bride_name ?> </div>
+									<div class="name t-right"><?php echo $bride_name ?> 
+									 </span></div><div class="and">&amp;</div><div class="name t-left"> <?php echo $groom_name ?>  </div>
 								</a>
 							</div>
                         </div>
@@ -167,7 +160,8 @@ include('../../config.php');
                         <div class="col-md-12 text-center">
                             <div class="logo">
 								<a href="#">
-									<div class="name t-right"><?php echo $groom_name ?></div><div class="and">&amp;</div><div class="name t-left"><?php echo $bride_name ?></span></div>
+										<div class="name t-right"><?php echo $bride_name ?> 
+									 </span></div><div class="and">&amp;</div><div class="name t-left"> <?php echo $groom_name ?>  </div>
 								</a>
 							</div>
                         </div>
@@ -190,22 +184,23 @@ include('../../config.php');
 	<div id="page-content">
 	
 		<!-- ////////////Content Box 01 -->
-		
+	
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 ">
 						<div class="box-item">
-							<a href="#"><img src="<?php echo '../../wedding1/images/'.$groom_photo; ?>" width="100%" height="100%"  title="" media-simple="true"/> </a>
-                            <h3><?php echo $groom_name ?></h3>
-                          
-						
+							<a href="#"><img src="images/bride.jpg" title="icon-name" class="img-circle"></a>
+							<h3><?php echo $groom_name ?>  </h3>
+							
+							<a class="btn btn-sm" href="#"></a>
 						</div>
 			 		</div>
 			 		<div class="col-sm-6 ">
 						<div class="box-item">
-							<a href="#"><img src="<?php echo '../../wedding1/images/'.$bride_photo; ?>" width="100%" height="100%"  title="" media-simple="true"/></a>
-                            <h3><?php echo $bride_name ?></h3>
-							
+							<a href="#"><img src="images/groom.jpg" title="icon-name" class="img-circle"></a>
+							<h3><?php echo $bride_name ?>  </h3>
+						
+							<a class="btn btn-sm" href="#"></a>
 						</div>
 			 		</div>
 				</div>
@@ -289,7 +284,7 @@ include('../../config.php');
 			<div class="container">
 				<div class="row">
 					<div class="box-item">
-						<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet vultatup duista.</p></blockquote>
+						
 					</div>
 				</div>
 			</div>
@@ -314,7 +309,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3>The title on the article</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+									
 									<a class="btn btn-skin" href="#">Read More</a>
 								</div>
 							</div>
@@ -326,7 +321,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3 class="fix-right">The title on the article</h3>
-									<p class="fix-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+									
 									<a class="btn btn-skin fix-right" href="#">Read More</a>
 								</div>
 							</div>
@@ -338,7 +333,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3>The title on the article</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+						
 									<a class="btn btn-skin" href="#">Read More</a>
 								</div>
 							</div>
@@ -352,7 +347,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3>The title on the article</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+									<p></p>
 									<a class="btn btn-skin" href="#">Read More</a>
 								</div>
 							</div>
@@ -364,7 +359,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3 class="fix-right">The title on the article</h3>
-									<p class="fix-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+									<p class="fix-right">.</p>
 									<a class="btn btn-skin fix-right" href="#">Read More</a>
 								</div>
 							</div>
@@ -376,7 +371,7 @@ include('../../config.php');
 							<div class="col-md-9">
 								<div class="wrapper">
 									<h3>The title on the article</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+									<p></p>
 									<a class="btn btn-skin" href="#">Read More</a>
 								</div>
 							</div>
@@ -386,74 +381,7 @@ include('../../config.php');
 			</div>
 		</section>
 		
-		<!-- ////////////Content Box 06 -->
-		<section class="box-content box-6">
-			<div class="container">
-				<div class="row heading">
-					<div class="col-lg-12">	
-	                    <h2>OUR STORIES</h2>
-						<hr class="line">
-                    	<div class="intro">Lorem ipsum dolor sit amet</div>
-	                </div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="box-item">
-							<img src="images/12.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Planning Our Honeymoon</h3>
-								<p>Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis, viverra feugiat ipsum volutpat vitae. Fusce justo turpis, sodales sed placerat non, suscipit at diam.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span>
-							</div>
-						</div>
-						<div class="box-item">
-							<img src="images/13.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Brainstorming Wedding Ideas</h3>
-								<p>Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis, viverra feugiat ipsum volutpat vitae. Fusce justo turpis, sodales sed placerat non, suscipit at diam.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="box-item">
-							<img src="images/10.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>She Said Yes!</h3>
-								<p>Nunc eu velit metus. Donec in massa libero. Donec bibendum orci a lorem scelerisque luctus. Aliquam et ante quis erat semper pretium. Pellentesque vitae aliquam ipsum. Cras tempor sit amet odio sit amet porttitor. Integer consectetur bibendum tempus. Fusce egestas sed mi a vehicula.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span>
-							</div>
-						</div>
-						<div class="box-item">
-							<img src="images/11.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Met Dovey???s Parents in Chicago</h3>
-								<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed varius fringilla tortor at euismod. Cras volutpat vehicula libero, nec faucibus urna bibendum id. Duis a commodo lectus. Morbi id purus nec purus feugiat vestibulum. Suspendisse sapien ante, bibendum ac quam quis, imperdiet bibendum sem. Curabitur nibh magna, tristique et convallis???</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="box-item">
-							<img src="images/14.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>Choosing The Bridesmaids and Groomsmen</h3>
-								<p>Suspendisse porttitor sapien ac lectus euismod imperdiet. Curabitur nec nibh at massa pellentesque accumsan eu id nibh. Donec accumsan ut mi et tincidunt. Aliquam eget metus nec leo tempor bibendum. Phasellus tincidunt lobortis metus. Duis euismod lorem turpis, viverra feugiat ipsum volutpat vitae. Fusce justo turpis, sodales sed placerat non, suscipit at diam.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span>
-							</div>
-						</div>
-						<div class="box-item">
-							<img src="images/15.jpg" class="img-responsive"/>
-							<div class="content">
-								<h3>A Sweet Escape to Paris</h3>
-								<p>Proin lobortis mattis odio non ornare. Sed tempor nisi eu hendrerit luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras et velit id sem tincidunt convallis ac eget quam. Vestibulum posuere porttitor sapien et fringilla. Donec laoreet ultricies sagittis. Suspendisse potenti.</p>
-								<span>MAY 21, 2014 BY VAFPRESS</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		
 		
 		<!-- ////////////Content Box 07 -->
 		<section class="box-content box-7">
@@ -476,7 +404,7 @@ include('../../config.php');
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="copyright">Copyright &copy; Your Website <br/>Designed by <a href="https://www.365bootstrap.com">365BOOTSTRAP</a></div>
+						<div class="copyright">Copyright &copy; Your Website <br/>Designed by <a href="#"></a></div>
 					</div>
 					<div class="col-md-4">
 						<ul class="list-inline social-buttons">
